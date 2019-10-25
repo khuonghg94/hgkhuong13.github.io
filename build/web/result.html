@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery/jquery.min.js"></script>
+<script src="js/boostrap/bootstrap.bundle.min.js"></script>
+<!-- <script src="js/boostrap/bootstrap.min.js"></script> -->
+<!-- <script src="js/boostrap/bootstrap.js"></script> -->
+<link rel="stylesheet" href="css/toast.min.css">
+<script src="js/toast.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--  <script src="js/bootbox.all.min.js"></script> -->
+<script src="js/mypages/capnhat_status.js"></script>
+<script src="js/lz-string.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Kết quả điểm danh</title>
+</head>
+<body>
+	<h1 align = 'center'> Kết quả điểm danh từ hệ thống</h1>
+	<img id="imgId" src='' width="30%">
+	<p> Mã số: </p> <input type="text" id="mso">
+	<p> Họ tên: </p> <input type="text" id="hten"> 
+	<p> Phòng: </p> <input type="text" id="room"> 
+	<p> Thông tin nếu đúng thì bạn bấm "Hoàn tất", còn nếu sai bạn vui lòng bấm "Cập nhật"</p> 
+	<input type="button" id="complete" value="Hoàn tất">
+	<input type="button" id="back" value="Quay lại">
+</body>
+<script type="text/javascript">
+if (typeof(Storage) !== "undefined") {
+	document.getElementById('imgId').setAttribute(
+        'src', localStorage.getItem("imgsrc")
+    );
+  	$("#mso").val(localStorage.getItem("id"))
+	$("#hten").val(localStorage.getItem("hten"))
+	$("#room").val(localStorage.getItem("room"))
+	document.getElementById("mso").disabled = true;
+	document.getElementById("hten").disabled = true;
+	document.getElementById("room").disabled = true;
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+<!--  
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#update").click(function(){
+		setTimeout(function(){
+			if(document.getElementById("mso").value != '' && document.getElementById("hten").value != ''){
+				location.href = "http://localhost:8080/Demo/update.html";
+			}else{
+				alert("Không có dữ liệu điểm danh")
+			}
+		}, 10);
+	});
+});
+</script>
+-->
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$("#back").click(function(){
+		setTimeout(function(){
+			localStorage.clear();
+			location.href = "http://localhost:8080/Demo/index.html";
+		}, 10);
+	});
+});
+</script>
+<script type="text/javascript">
+document.getElementById("complete").onclick = function () {
+	$("#complete").prop('disabled', true);
+	if(document.getElementById("mso").value != ''){
+		sendStatus();
+	}else{
+		alert("Không có dữ liệu điểm danh")
+	}
+};
+</script>
+
+</html>

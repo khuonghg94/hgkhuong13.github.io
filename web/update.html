@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cập nhật thông tin điểm danh</title>
+</head>
+<body>
+	<h1> Cập nhật thông tin điểm danh</h1>
+	<p> Nhập các thông tin đầy đủ theo mẫu sau: </p>
+	<div> Phòng :  <select name="phong">
+				<option value="default">Chọn phòng</option>
+  				<option value="CCS">CCS</option>
+  				<option value="CS1">CS1</option>
+  				<option value="CS2">CS2</option>
+  				<option value="CS3">CS3</option>
+  				<option value="CS4">CS4</option>
+  				<option value="CS5">CS5</option>
+					</select> </div> </br>
+	<div> Mã số :  <input type="text" id="mso"> </div> </br>
+	<div> Họ tên:  <input type="text" id="hten"> </div> </br>
+	<input type="submit" id="update" value="Cập nhật thông tin">
+	<input type="button" id="back" value="Trở lại trang chủ">
+</body>
+<script type="text/javascript">
+    document.getElementById("back").onclick = function () {
+        location.href = "http://localhost:8080/Demo/index.html";
+    };
+</script>
+</html>

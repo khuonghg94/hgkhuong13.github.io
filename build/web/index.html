@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mobile Camera</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/boostrap/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/toast.min.css">
+  <script src="js/toast.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://www.webrtc-experiment.com/DetectRTC.js"> </script>
+  <script src="https://www.webrtc-experiment.com/screenshot.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+</head>
+<body id="body">
+  <div id="container">
+    <div id="vid_container">
+        <video id="video" autoplay playsinline></video>
+        <div id="video_overlay"></div>
+    </div>
+    <div id="gui_controls">
+        <button id="switchCameraButton" name="switch Camera" type="button" aria-pressed="false"></button>
+        <button id="takePhotoButton" name="take Photo" type="button"></button>
+        <button id="toggleFullScreenButton" name="toggle FullScreen" type="button" aria-pressed="false"></button>
+    </div>
+  </div> 
+  <script src="js/DetectRTC.min.js"></script>
+  <script src="js/adapter.min.js"></script>  
+  <script src="js/screenfull.min.js"></script>
+  <script src="js/howler.core.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/jquery.pleaseWait.js"></script>
+</body>
+</html>
